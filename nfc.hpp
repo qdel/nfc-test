@@ -15,9 +15,12 @@ signals:
     void read(QString);
 
 public slots:
-    void handleMessage(const QNdefMessage &message, QNearFieldTarget *target);
-    void handlePolledNdefMessage(QNdefMessage message);
-    void startNfc();
+  void targetDetected(QNearFieldTarget *target);
+  void targetLost(QNearFieldTarget *target);
+  void handleMessage(const QNdefMessage &message, QNearFieldTarget *target);
+  void handlePolledNdefMessage(QNdefMessage message);
+  void startNfc();
+  void stopNfc();
 private:
     QNearFieldManager   *manager;
     QNdefFilter         filter;

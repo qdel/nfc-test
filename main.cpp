@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    nfc::getInstance().startNfc();
+    //nfc::getInstance().startNfc();
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     qDebug() << "Loaded qml!";
     if (engine.rootObjects().isEmpty())
